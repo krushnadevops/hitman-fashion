@@ -1,0 +1,477 @@
+/* styles.css - Hitman Fashion Surat - Black & White Theme */
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --accent-color: #555;
+  --font-family: 'Roboto', sans-serif;
+}
+
+/* Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and typography */
+body {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header and navigation - Enhanced Professional Look */
+.main-header {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.main-header .logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation Styling */
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+}
+
+.nav li {
+  margin: 0;
+}
+
+.nav a {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Hero section and slider */
+
+.hero-slider {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-slider .slider {
+  height: 100%;
+  position: relative;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-slider .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--secondary-color);
+  padding: 2rem 3rem;
+  max-width: 600px;
+  margin-left: 5%;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-slider .slide-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero-slider p {
+  font-size: 1.2rem;
+}
+
+.hero-slider .overlay {
+  display: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.highlights {
+  background: #f9f9f9;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.highlight-box {
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 220px;
+}
+
+.highlight-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-box i {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.highlight-box h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-box p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+
+/* CSS */
+.products {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.product-item img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-item h4 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  color: #222;
+}
+
+.product-item p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.materials {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.material-scroll {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.material-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for cleaner look */
+}
+
+.material-item {
+  flex: 0 0 260px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.material-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.material-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.material-item h4 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  color: #222;
+}
+
+.material-item p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+
+/* Footer */
+.footer {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.footer h4 {
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.footer .map iframe {
+  margin-top: 1rem;
+  border: none;
+}
+
+.social a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+/* Floating WhatsApp */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  z-index: 1000;
+}
+
+/* Contact Hero Section */
+.contact-hero {
+  position: relative;
+  background-image: url('../images/shirt-texture.jpg'); /* Use your shirt texture image path here */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  animation: fadeIn 1.2s ease-in-out both;
+}
+
+.contact-hero .overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact-hero h1 {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.banner-title h2 {
+  font-size: 2.8rem;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+  border-color: #000;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .banner-title h2 {
+    font-size: 2rem;
+  }
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .highlights {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav li {
+    margin: 0.5rem 0;
+  }
+
+  .hero-slider .overlay {
+    padding: 1rem 1.5rem;
+    margin-left: 2%;
+    max-width: 90%;
+  }
+
+  .hero-slider .slide-title {
+    font-size: 2rem;
+  }
+
+  .hero-slider p {
+    font-size: 1rem;
+  }
+
+  .hero-slider .overlay {
+  display: none;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 50vh;
+    padding: 2rem 1rem;
+  }
+
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+  }
+}
+
+}
